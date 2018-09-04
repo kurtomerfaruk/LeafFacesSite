@@ -5,6 +5,7 @@
       xmlns:l="http://ofarukkurt.blogspot.com/leaffaces">
     <h:head>
         <title>LeafFaces Tutorial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </h:head>
     <h:body>
         <h:form>
@@ -19,6 +20,7 @@
                 <l:wms wmsName="bluemarble"
                        layers="ne:ne"
                        url="https://demo.boundlessgeo.com/geoserver/ows?"/>
+                <l:heatmap points="#{simpleController.modelList}"/>
             </l:map>
         </h:form>
     </h:body>

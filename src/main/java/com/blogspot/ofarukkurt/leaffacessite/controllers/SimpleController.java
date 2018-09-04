@@ -1,0 +1,55 @@
+package com.blogspot.ofarukkurt.leaffacessite.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+
+/**
+ *
+ * @author Omer Faruk Kurt
+ * @Created on date 04/09/2018 10:29:07
+ */
+@Named(value = "simpleController")
+@ViewScoped
+public class SimpleController implements java.io.Serializable {
+
+    private static final long serialVersionUID = 8642010380539719215L;
+
+    private List<String> modelList;
+
+    @PostConstruct
+    public void init() {
+        modelList = createData();
+    }
+
+    public List<String> getModelList() {
+        return modelList;
+    }
+
+    public void setModelList(List<String> modelList) {
+        this.modelList = modelList;
+    }
+
+    private List<String> createData() {
+        List<String> models = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            Random randomLat = new Random();
+            double latBegin = -37.8839;
+            double latEnd = -37.9124889333;
+            double lngBegin = 175.3745188667;
+            double lngEnd = 175.4727737833;
+//            double latitude = (Math.random() * 180.0) - 90.0;
+            double latitude = latBegin + (latEnd - latBegin) * randomLat.nextDouble();
+            //double longitude = (Math.random() * 360.0) - 180.0;
+            double longitude = lngBegin + (lngEnd - lngBegin) * randomLat.nextDouble();
+            String model = "[" + latitude + "," + longitude + "]";
+            models.add(model);
+        }
+
+        return models;
+    }
+
+}
