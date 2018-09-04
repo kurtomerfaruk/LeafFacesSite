@@ -15,12 +15,12 @@
                    minZoom="1"
                    zoom="10"
                    id="map">
-                
-                <l:locate/>
-                <l:wms wmsName="bluemarble"
+                <l:osmlayer/>
+                <l:locate position="bottomleft" flyTo="true"/>
+<!--                <l:wms wmsName="bluemarble"
                        layers="ne:ne"
-                       url="https://demo.boundlessgeo.com/geoserver/ows?"/>
-                <l:heatmap points="#{simpleController.modelList}"/>
+                       url="https://demo.boundlessgeo.com/geoserver/ows?"/>-->
+                <!--<l:heatmap points="#{simpleController.modelList}"/>-->
             </l:map>
         </h:form>
     </h:body>
