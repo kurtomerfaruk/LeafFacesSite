@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:l="http://ofarukkurt.blogspot.com/leaffaces">
+    <h:head>
+        <title>LeafFaces Tutorial</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <l:map center="37.0651077954,37.403792393399996"
+                   widgetVar="mapVar"
+                   maxZoom="20"
+                   minZoom="1"
+                   zoom="10"
+                   id="map">
+                
+                <l:locate/>
+                <l:wms wmsName="bluemarble"
+                       layers="ne:ne"
+                       url="https://demo.boundlessgeo.com/geoserver/ows?"/>
+            </l:map>
+        </h:form>
+    </h:body>
+</html>
+
