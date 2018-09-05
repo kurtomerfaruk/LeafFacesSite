@@ -1,5 +1,9 @@
 package com.blogspot.ofarukkurt.leaffacessite.controllers;
 
+import com.blogspot.ofarukkurt.leaffaces.model.map.DefaultMapModel;
+import com.blogspot.ofarukkurt.leaffaces.model.map.LatLng;
+import com.blogspot.ofarukkurt.leaffaces.model.map.MapModel;
+import com.blogspot.ofarukkurt.leaffaces.model.map.Marker;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -20,9 +24,19 @@ public class SimpleController implements java.io.Serializable {
 
     private List<String> modelList;
 
+    private MapModel model;
+    private Marker marker;
+
     @PostConstruct
     public void init() {
-        modelList = createData();
+        model = new DefaultMapModel();
+        LatLng coord1 = new LatLng(37.067103, 37.371856);
+        LatLng coord2 = new LatLng(37.064548, 37.371333);
+
+        //Draggable
+        model.addOverlay(new Marker(coord1,"Gaziantep1"));
+        model.addOverlay(new Marker(coord2,"Gaziantep2"));
+//        modelList = createData();
     }
 
     public List<String> getModelList() {
@@ -31,6 +45,22 @@ public class SimpleController implements java.io.Serializable {
 
     public void setModelList(List<String> modelList) {
         this.modelList = modelList;
+    }
+
+    public Marker getMarker() {
+        return marker;
+    }
+
+    public void setMarker(Marker marker) {
+        this.marker = marker;
+    }
+
+    public MapModel getModel() {
+        return model;
+    }
+
+    public void setModel(MapModel model) {
+        this.model = model;
     }
 
     private List<String> createData() {
