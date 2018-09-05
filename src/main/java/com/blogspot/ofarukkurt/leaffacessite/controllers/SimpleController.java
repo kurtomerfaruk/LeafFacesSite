@@ -34,8 +34,8 @@ public class SimpleController implements java.io.Serializable {
         LatLng coord2 = new LatLng(37.064548, 37.371333);
 
         //Draggable
-        model.addOverlay(new Marker(coord1,"Gaziantep1"));
-        model.addOverlay(new Marker(coord2,"Gaziantep2"));
+        model.addOverlay(new Marker(coord1,"İnciliPınar"));
+        model.addOverlay(new Marker(coord2,"100.Yıl"));
 //        modelList = createData();
     }
 
