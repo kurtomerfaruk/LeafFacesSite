@@ -16,7 +16,7 @@
                    zoom="10"
                    model="#{simpleController.model}"
                    loadingControl="true"
-                   drawToolbar="true"
+                   drawToolbar="false"
                    id="map">
                 <l:osmlayer/>
                 <!--<l:locate position="bottomleft" flyTo="true"/>-->
@@ -28,10 +28,11 @@
                 <!--<l:logo logoPath="resources/images/leaf-green.png" height="100"/>-->
                 <l:drawToolbar/>
                 <l:miniMap position="bottomright" toggleDisplay="true"/>
+                <l:coordinates/>
                 <!--<l:scale/>-->
                 <!--<l:thematic/>-->
-                <l:coordinates positions="bottomleft"/>
-                <l:buttonBar/>
+<!--                <l:coordinates positions="bottomleft"/>
+                <l:buttonBar/>-->
             </l:map>
         </h:form>
     </h:body>
